@@ -11,12 +11,12 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const form = location?.state?.from?.pathname || '/';
+    const from = location?.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(() => {
-                navigate(form, { replace: true });
+                navigate(from, { replace: true });
             })
     }
 
